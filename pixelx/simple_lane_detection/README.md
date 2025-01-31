@@ -64,4 +64,6 @@ python runner.py
 ✅ Improved **real-time performance**.  
 ✅ Integration with **deep learning** for more accurate detection.
 
+---
+
 _This project is actively improving—stay tuned!_ 🚀
