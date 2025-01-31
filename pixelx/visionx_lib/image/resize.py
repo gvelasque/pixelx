@@ -27,7 +27,6 @@ def resize_by_aspect_ratio(image: ImageType, new_width: int,
                       interpolation=interpolation)
 
 
-# TODO: CODE NOT USED
 def resize_by_factor(image: ImageType, factor_x: float,
                      factor_y: float = None,
                      dest: ImageType | None = None,
