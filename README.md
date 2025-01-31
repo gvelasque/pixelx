@@ -52,8 +52,4 @@ PixelX consists of multiple subprojects, each focusing on a specific vision-rela
 
 ---
 
-## 📩 Contact & Portfolio
-🔗 **[Your LinkedIn](your-linkedin-url)**  
-💼 **[Your Portfolio](your-portfolio-url)**
-
 _Stay tuned for updates!_ 🚀
