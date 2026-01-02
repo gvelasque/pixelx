@@ -3,3 +3,11 @@
 
 # Ignore JetBrains (PyCharm) settings
 .idea/
+
+# Ignore data directories (input/output images and videos)
+**/data/input/
+**/data/output/
+
+# But keep the data directory structure
+!**/data/input/.gitkeep
+!**/data/output/.gitkeep

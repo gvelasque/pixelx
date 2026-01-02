@@ -1,9 +1,9 @@
 # oop_version/simple_lane_detection/lane_detection_pipeline.py
 
 from pixelx.visionx_lib.core.base import ImageType
-from .image_processor import ImageProcessor
-from .line_detector import LineDetector
-from .lane_drawer import LaneDrawer
+from image_processor import ImageProcessor
+from line_detector import LineDetector
+from lane_drawer import LaneDrawer
 
 
 class LaneDetectionPipeline:
