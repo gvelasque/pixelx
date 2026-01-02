@@ -27,6 +27,26 @@ PixelX consists of multiple subprojects, each focusing on a specific vision-rela
 - Works with real-world road footage.
 - Powered by **VisualX**.
 
+#### 📚 **Two Implementation Approaches Available**
+To showcase different programming paradigms and help developers understand the evolution from procedural to object-oriented design, this project is now available in two versions:
+
+##### **Procedural Version** (`/procedural_version`)
+- Original implementation using functional programming
+- Simple, sequential function calls
+- Easy to understand for beginners
+- Great for quick prototyping and scripts
+- [View Procedural Version →](./procedural_version/README.md)
+
+##### **Object-Oriented Version** (`/oop_version`)
+- Modern OOP implementation with classes
+- Modular design with `ImageProcessor`, `LineDetector`, and `LaneDrawer` classes
+- Better code organization and maintainability
+- Easier to test and extend
+- Ideal for larger projects and teams
+- [View OOP Version →](./oop_version/README.md)
+
+Both versions produce identical results but demonstrate different software engineering approaches. Compare them to understand the benefits of each paradigm!
+
 ### 🔄 **2. Curve Lane Detection** (Coming Soon 🔜)
 - Will support **curved lanes** using advanced contour analysis.
 - Improved **robustness** in different lighting conditions.
