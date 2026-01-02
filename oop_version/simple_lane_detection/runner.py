@@ -69,22 +69,6 @@ def pipeline_image(image_path: str, display: bool = False) -> ImageType:
         logging.info("Image processing complete.")
 
 
-def process_frame_with_pipeline(image: ImageType, config_params: tuple) -> ImageType:
-    """
-    Wrapper function to process a single video frame.
-    
-    Args:
-        image: Frame image to process
-        config_params: Configuration parameters
-        
-    Returns:
-        Processed frame with detected lanes
-    """
-    pipeline = LaneDetectionPipeline(config_params)
-    processed_image, _ = pipeline.process_image(image, display=False)
-    return processed_image
-
-
 def pipeline_video(video_path: str, display: bool = False) -> dict:
     """
     Process a video for lane detection using the OOP pipeline.
@@ -102,6 +86,9 @@ def pipeline_video(video_path: str, display: bool = False) -> dict:
     config = ConfigManager("../simple_lane_detection/config.json")
     config_params = fetch_processing_params(config)
 
+    # Create a single pipeline instance for reuse
+    pipeline = LaneDetectionPipeline(config_params)
+
     capture: cv2.VideoCapture | None = None
     try:
         capture = open_video_capture(video_path)
@@ -112,10 +99,14 @@ def pipeline_video(video_path: str, display: bool = False) -> dict:
         fps = get_frame_rate(capture)
         frame_size = get_frame_dimensions(capture)
         
-        # Process video using the OOP approach
+        # Process video using the OOP approach with reusable pipeline
+        def process_with_pipeline(img, cfg):
+            processed, _ = pipeline.process_image(img, display=False)
+            return processed
+        
         processed_frames = process_video(
             capture,
-            process_function=lambda img, cfg: LaneDetectionPipeline(cfg).process_image(img, display=False)[0],
+            process_function=process_with_pipeline,
             config_params=config_params,
             display=display
         )

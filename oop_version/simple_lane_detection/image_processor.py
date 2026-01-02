@@ -1,7 +1,6 @@
 # oop_version/simple_lane_detection/image_processor.py
 
 from pixelx.visionx_lib.core.base import cv2, ImageType
-from pixelx.visionx_lib.core.enums import MaskType
 from pixelx.visionx_lib.image import (
     apply_gaussian_blur,
     convert_to_rgb2grayscale,
@@ -100,7 +99,7 @@ class ImageProcessor:
     def apply_roi_mask(
         self,
         image: ImageType,
-        mask_type: MaskType,
+        mask_type: str,  # String value like 'triangle', 'rectangular', 'circle'
         color: tuple[int, int, int] = (255, 255, 255),
         thickness: int = 2,
         center: tuple[int, int] = None,

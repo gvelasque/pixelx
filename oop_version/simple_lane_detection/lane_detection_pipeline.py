@@ -110,8 +110,11 @@ class LaneDetectionPipeline:
     def reset(self):
         """
         Reset all component states for processing a new image.
+        Note: Line detector and lane drawer maintain their configuration
+        but will naturally reset when processing new images.
         """
-        self.image_processor = ImageProcessor(**{'width': self.image_processor.width, 
-                                                   'height': self.image_processor.height})
-        # Line detector and lane drawer maintain their configuration but will 
-        # naturally reset when processing new images
+        # Reinitialize image processor to clear cached images
+        self.image_processor = ImageProcessor(
+            width=self.image_processor.width, 
+            height=self.image_processor.height
+        )

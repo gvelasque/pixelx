@@ -4,6 +4,12 @@
 # Ignore JetBrains (PyCharm) settings
 .idea/
 
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
 # Ignore data directories (input/output images and videos)
 **/data/input/
 **/data/output/
