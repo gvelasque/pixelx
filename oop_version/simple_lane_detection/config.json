@@ -1,0 +1,57 @@
+{
+  "image_processing": {
+    "preprocessing": {
+      "width": 640,
+      "height": null
+    },
+    "edge_detection": {
+      "gaussian_blur": {
+        "kernel_size": [
+          5,
+          5
+        ],
+        "deviation": 0.0
+      },
+      "canny": {
+        "threshold_lower": null,
+        "threshold_higher": null,
+        "sigma": 0.3
+      }
+    },
+    "roi_mask": {
+      "mask_type": "triangle",
+      "color": "white",
+      "thickness": 2,
+      "center": null,
+      "radius": null,
+      "start_point": null,
+      "end_point": null
+    },
+    "detect_lane": {
+      "hough_lines": {
+        "rho": 1,
+        "theta_degrees": 180,
+        "threshold": 30,
+        "min_line_length": 30,
+        "max_line_gap": 20
+      },
+      "separate_lines": {
+        "slope_threshold": 0.5
+      },
+      "fit_lines": {
+        "hidden_frac": 0.65
+      }
+    },
+    "draw_detect_lane": {
+      "draw_lane": {
+        "color": "RED",
+        "thickness": 5
+      },
+      "overlay": {
+        "alpha": 1,
+        "beta": 1,
+        "gamma": 1
+      }
+    }
+  }
+}
